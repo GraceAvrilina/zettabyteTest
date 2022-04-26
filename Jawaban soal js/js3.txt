@@ -1,0 +1,89 @@
+// Expected Result : 
+// [
+//   { name: 'Rian Nugraha', school_name: 'PLMK-JKT' },
+//   { name: 'Ari Santoso', school_name: 'GRSR-JKT' },
+//   { name: 'Rahman Sunggara', school_name: 'GELM-JKT' },
+// ]
+// Direction :
+// Return a formatted array for students of specific school using id of school.
+
+
+const source = [
+    {
+      id: "1",
+      data: {
+          first_name: "Rian",
+          last_name: "Nugraha"
+      },
+      school: {
+        id: "1",
+        data: "PLMK-JKT"
+      },
+    },
+    {
+      id: "2",
+      full_name: "Ari Santoso",
+      school: {
+        id: "1",
+        short_name: "GRSR",
+        data: "JKT"
+      },
+    },
+    {
+      id: "3",
+      data: {
+        first_name: "Rahman",
+        last_name: "Sunggara"
+    },
+    school: {
+        id: "1",
+        short_name: "GELM",
+        data: "JKT"
+      },
+    },
+    {
+        id: "4",
+        data: {
+            first_name: "Rian",
+            last_name: "Nugraha"
+        },
+        school: {
+            id: "2",
+            data: "PLMK-BDG"
+        },
+    },
+  ]
+
+
+  function result(num) {
+   	
+  this.source.forEach(val => {
+    let name
+    let school_name
+    if(val.hasOwnProperty("data") && val.school.id== '1'){
+      name = val.data.first_name + " "+ val.data.last_name
+    }
+    else{
+      name = val.full_name 
+    }
+
+    if(val.school.hasOwnProperty("short_name") && val.school.id== '1'){
+      school_name = val.school.short_name + '-' + val.school.data
+    }
+    else{
+      school_name =val.school.data
+    }
+    
+    if(val.school.id== '1'){
+    this.the_result.push({
+      name: name,
+      school_name: school_name
+    }) 
+  }
+  });
+
+return this.the_result;
+  }
+  
+  console.log(result(source));
+

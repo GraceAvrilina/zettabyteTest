@@ -1,0 +1,55 @@
+// Expected Result : 
+// [
+//   { id: '1', name: 'Sherlock', score: 90 },
+//   { id: '4', name: 'Budi', score: 85 }
+// ]
+// Direction :
+// Return array of student for score is bigger than mean score (average score)
+
+const students = [
+    {
+      id: "1",
+      name: "Sherlock",
+      score:90
+    },
+    {
+      id: "2",
+      name: "Genta",
+      score: 75
+    },
+    {
+      id: "3",
+      name: "Ai",
+      score: 80
+    },
+    {
+      id: "4",
+      name: "Budi",
+      score:85
+    }
+  ]
+  
+  function result() {
+    let avg 
+
+  this.students.forEach(val => {
+    this.score.push(val.score)
+    avg = Math.ceil(this.score.reduce((a, b) => a + b, 0) / this.students.length)
+
+  });
+
+  this.students.forEach(element => {
+    
+    if(element.score > avg){
+      this.the_result.push({
+        id: element.id,
+        name: element.name,
+        score: element.score
+      })
+    }
+  });
+
+return the_result;
+  }
+  
+  console.log(result());

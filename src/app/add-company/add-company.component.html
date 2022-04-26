@@ -1,0 +1,100 @@
+<h1 mat-dialog-title>Add Company Staff for CASTORAMA France SAS</h1>
+<div mat-dialog-content>
+  <!-- <p>What's your favorite animal?</p> -->
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+           placeholder="Ex. pat@example.com" 
+           >
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+    
+  </mat-form-field>
+<br>
+  <div class="rd-btn">
+  <mat-label>Civility</mat-label>
+    
+  <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Mr.</mat-radio-button>
+      <mat-radio-button value="2">Mrs.</mat-radio-button>
+    </mat-radio-group> 
+</div>   
+    
+  <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input type="text" matInput [(ngModel)]="data.name">
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input type="text" matInput >
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Position</mat-label>
+    <input type="text" matInput >
+</mat-form-field>
+
+<br>
+<mat-form-field appearance="fill">
+    <mat-label>Office Phone</mat-label>
+    <input type="text" matInput >
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Direct Line </mat-label>
+    <input type="text" matInput >
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Mobile Phone</mat-label>
+    <input type="text" matInput >
+</mat-form-field>
+<br>
+
+<mat-form-field appearance="fill">
+    <mat-label>Select Entity</mat-label>
+    <mat-select>
+      <mat-option value="a">
+       a
+      </mat-option>
+      <mat-option value="b">
+       a
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+<mat-form-field appearance="fill">
+    <mat-label>Select Company</mat-label>
+    <mat-select>
+      <mat-option value="a">
+       a
+      </mat-option>
+      <mat-option value="b">
+       a
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select User Type</mat-label>
+    <mat-select>
+      <mat-option value="hr">
+       HR
+      </mat-option>
+      <mat-option value="mentor">
+       Mentor
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
+  <button mat-button mat-dialog-close (click)="submitDialog()" >Submit</button>
+</div>
